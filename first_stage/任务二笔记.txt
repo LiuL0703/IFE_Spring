@@ -1,0 +1,46 @@
+1 关于text-indent 一般的可以用于所有的块级元素用于首行缩进但无法应用于行内元素
+示例：HTML代码
+++++++++++++++++++++++
+<p style="text-indent:1cm;">The text-indent property specifies the indentation of the first line in a text-block.Note: Negative values are allowed. The first line will be indented to the left if the value is negative.<p>
+++++++++++++++++++++++
+效果
+————————————————————————————————————————————————————————————
+    the text-indent property specifies the indentation of the first 
+line in a text-block.Note: Negative values are allowed. The first line will be indented to the left if the value is negative.
+
+————————————————————————————————————————————————————————————
+2 box-shadow
+{box-shadow:inset x-offset y-offset blur-radius spread-radius color}
+对象选择器 {box-shadow:投影方式 X轴偏移量 Y轴偏移量 阴影模糊半径 阴影扩展半径 阴影颜色}
+
+语法规则
+none | [inset? && [ <offset-x> <offset-y> <blur-radius>? <spread-radius>? <color>? ] ]#
+-------------------------------------------------------------------
+/* offset-x | offset-y | color */
+box-shadow: 60px -16px teal;
+
+/* offset-x | offset-y | blur-radius | color */
+box-shadow: 10px 5px 5px black;
+
+/* offset-x | offset-y | blur-radius | spread-radius | color */
+box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+/* inset | offset-x | offset-y | color */
+box-shadow: inset 5em 1em gold;
+
+/* Any number of shadows, separated by commas */
+box-shadow: 3px 3px red, -1em 0 0.4em olive;
+--------------------------------------------------------------------
+inset
+默认阴影在边框外。使用后阴影在边框内部
+<offset-x> 设置水平偏移量，如果是负值则阴影位于元素左边,<offset-y> 设置垂直偏移量，如果是负值则阴影位于元素上面,如果两者都是0，那么阴影位于元素后面
+blur-radius 
+值越大阴影越大越淡[不能为负值]
+spread-radius
+大于0时阴影扩大，反之减小默认为0；
+color ：--
+
+更多内容参考链接：
+/*MDN*/  /*https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-shadow */
+/*w3cplus*/ /*http://www.w3cplus.com/content/css3-box-shadow*/
+3 vertical-align
