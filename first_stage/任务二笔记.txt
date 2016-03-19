@@ -43,4 +43,6 @@ color ：--
 更多内容参考链接：
 /*MDN*/  /*https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-shadow */
 /*w3cplus*/ /*http://www.w3cplus.com/content/css3-box-shadow*/
+
 3 vertical-align
+指定了行内水平（inline-level）元素或表格单元格（table-cell）元素的垂直对齐方式
