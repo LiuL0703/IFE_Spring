@@ -8,7 +8,15 @@
 	*{
 		margin: 0;
 		padding: 0;
-	}	
+	}
+	.clearfix:after {
+	    visibility: hidden;
+	    display: block;			
+	    font-size: 0;
+	    content: " ";
+	    clear: both;
+	    height: 0; 
+	}						/*	  一般不含包裹属性的div内部有浮动元素的话，那么这个							               浮动元素会让此div的高度塌陷    */					
 	.row  p{
 		height: 50px;
 		background: #eee;
@@ -59,7 +67,7 @@
 	}
 </style>
 <body>
-	<div class="container">
+	<div class="container clearfix">
 		<div class="row">
 			<div class="col-sm-4 col-sx-6"><p></p></div>
 			<div class="col-sm-4 col-sx-6"><p></p></div>
