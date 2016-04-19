@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Task18</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<style>
+	#show div{
+		width: 50px;
+		height: 35px;
+		background: red;
+		margin: 10px;
+		float: left;
+		color: #fff;
+		text-align: center;
+		padding-top: 15px;
+	}
+</style>
+<script>
+	window.onload = function(){
+		var oBtn_left_in = document.getElementById('button-left-in');
+		var oBtn_left_out = document.getElementById('button-left-out');
+		var oBtn_right_in = document.getElementById('button-right-in');
+		var oBtn_right_out = document.getElementById('button-right-out');
+		var oDiv = document.getElementById('show');
+		var oTxt = document.getElementById('input');
+		var array = Array();
+
+		function txt(){
+			oDiv.innerHTML = '';
+			for (var i in array) {
+				oDiv.innerHTML += "<div>"+array[i]+"</div>";
+			}
+		}
+		oBtn_left_in.onclick = function(){
+			if(oTxt.value){
+				array.unshift(oTxt.value);
+				txt();
+			}
+		};
+		oBtn_left_out.onclick = function(){
+			if(array.length >=1){
+				var count = array.shift(oTxt.value);
+				txt();
+				alert(count);
+			}
+			else{
+				alert('队列为空')
+			}
+		};
+		oBtn_right_in.onclick = function(){
+			if(oTxt.value){
+				array.push(oTxt.value);
+				txt();
+			}	
+		};
+		oBtn_right_out.onclick = function(){
+			if(array.length!=0){
+				var count = array.pop(oTxt.value);
+				txt();
+				alert(count);
+			}
+			else{
+				alert('队列为空')
+			}	
+		};
+	};
+</script>
+</head>
+<body>
+    <input id="input" type="number">
+    <button id="button-left-in">左侧入</button>
+    <button id="button-right-in">右侧入</button>
+    <button id="button-left-out">左侧出</button>
+    <button id="button-right-out">右侧出</button>
+	<div id="show">
+		
+    </div>
+</body>
+</html>
