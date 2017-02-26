@@ -69,10 +69,12 @@
 		}
 		aLi[0].onclick = function(e){
 			alert(aLi[0].innerHTML);
+			oMenu.style = "none";
 			e.stopPropagation();
 		}
 		aLi[1].onclick = function(e){
 			alert(aLi[1].innerHTML);
+			oMenu.style = "none";
 			e.stopPropagation();
 		}
 		document.onclick = function(e){
