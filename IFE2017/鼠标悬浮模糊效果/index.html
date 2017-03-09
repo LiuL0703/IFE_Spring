@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>CSS3字体渐变</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.text{
+		position: relative;
+		margin-top: 1%;
+		margin-left: 1.5%;
+		width: 85%;
+		height: 80%;
+		text-align: center;
+		color: #fffaf0;
+		display: flex;
+		justify-content: center;  
+		align-items: center;
+		flex-direction: column;		
+		text-shadow: 1px 1px 2px rgba(0,0,0,.26);
+		box-shadow: 0 0 20px 20px rgba(0,0,0, .46);
+		transition: opacity .8s;
+		opacity: 1;
+	}
+	.text h3{
+		margin-bottom: 20px;
+		background-image: -webkit-linear-gradient(left, #3498db, #f47920 10%, #d71345 20%, #f7acbc 30%, #ffd400 40%, #3498db 50%, #f47920 60%, #d71345 70%, #f7acbc 80%, #ffd400 90%, #3498db);
+	  	color: transparent;
+	  	-webkit-text-fill-color: transparent;
+	  	-webkit-background-clip: text;
+	  	-webkit-background-size: 200% 100%;
+	  	background-size: 200% 100%;
+	 	animation: captions 4s linear infinite; 
+	}
+	@keyframes captions{
+		0%{
+			background-position: 0 0;
+		}
+		100%{
+			background-position: -100% 0;
+		}
+	}
+	.text a{
+		color: #00bfff;
+		opacity: 0;
+		transform: translate(0, 20px);
+		text-decoration: none;
+		font: 20px/100% 'Micrsoft Yahei';
+		display: block;
+		margin-top: 10px;
+		cursor: pointer;
+		position: relative;
+		transition: opacity .8s transform .8s;
+		z-index: 1;
+		animation: links 4s linear infinite; 
+	}
+	@keyframes links{
+		0%{
+			color:dodgerblue;
+		}
+		33%{
+			color:pink;
+		}
+		66%{
+    		color:lightgreen;
+		}
+		100%{
+			color:#3498db
+		}
+	}
+	.container{
+		margin: 10% auto ;
+		position: relative;
+		max-width: 500px;
+		height: 300px;
+		
+	}
+	.container img{
+		width: 100%;
+		height: 100%;
+	}
+	.wrap{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index:1;
+		padding: 30px
+	}
+	.text::before{
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 50%;
+		width: 100%;
+		height: 0;
+		border: 3px solid ghostwhite;
+		border-width: 0 3px;
+		overflow: hidden;
+		visibility: hidden;
+		transition: all .8s;
+		box-sizing: border-box;
+	}
+	.text::after{
+		content: '';
+		position: absolute;
+	  	left:50%;
+	  	top: 0;
+	  	width: 0;
+	  	height: 100%;
+	 	border: 3px solid ghostwhite;
+	  	border-width: 3px 0;
+	  	overflow: hidden;
+	 	visibility: hidden;
+	  	transition: all .8s;
+	  	box-sizing: border-box;
+	}
+	.container:hover .text{
+		opacity: 1;
+	}
+	.container:hover .text::before{
+		height: 100%;
+		visibility: visible;
+		top: 0;
+	}
+	.container:hover .text::after{
+		width: 100%;
+		visibility: visible;
+		left: 0;
+	}
+	.container:hover .wrap .text a{
+		opacity: 1;
+  		transform: translate(0);
+	}
+	.container:hover img{
+		filter: blur(2px);
+	}
+</style>
+</head>
+<body>
+    <div class="container">
+    	<div class="wrap">
+    		<div class="text">
+    			<h3>这是一段测试颜色渐变的文字</h3>
+    			<a href="https://github.com/LiuL0703">点击进入</a>
+    		</div>
+    	</div>
+    	<img src="img/back.jpg" alt="">
+    </div>
+</body>
+</html>
