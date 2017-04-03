@@ -60,6 +60,14 @@ let data = {
 };
 
 let app = new Observer(data);
-data.user.name;
-data.user = {other:'sha'};
+let app1 = new Observer({
+  name: 'youngwind',
+  age: 25
+});
+let app2 = new Observer({
+  major: 'computer'
+});
+app1.name;
+app1.age = 19;
+app2.major;
 
